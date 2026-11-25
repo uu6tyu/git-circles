@@ -3,7 +3,7 @@ from pathlib import Path
 from random import randint
 
 from PyQt6 import uic
-from PyQt6.QtGui import QColor, QPainter, QPen
+from PyQt6.QtGui import QColor, QPainter, QBrush
 from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
@@ -25,7 +25,7 @@ class Circles(QMainWindow):
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-        painter.setPen(QPen(QColor("yellow"), 4))
+        painter.setBrush(QColor("yellow"))
         for x, y, d in self.circles:
             painter.drawEllipse(x, y, d, d)
 
