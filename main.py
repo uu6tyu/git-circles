@@ -5,6 +5,7 @@ from random import randint
 from PyQt6 import uic
 from PyQt6.QtGui import QColor, QPainter, QBrush
 from PyQt6.QtWidgets import QApplication, QMainWindow
+import Ui_MainWindow
 
 
 class Circles(QMainWindow):
