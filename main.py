@@ -7,7 +7,7 @@ from PyQt6.QtGui import QColor, QPainter, QBrush
 from PyQt6.QtWidgets import QApplication, QMainWindow
 import Ui_MainWindow
 
-
+#11
 class Circles(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -26,7 +26,11 @@ class Circles(QMainWindow):
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+<<<<<<< HEAD
         painter.setBrush(QColor("yellow"))
+=======
+        painter.setBrush(QBrush(QColor("yellow"))
+>>>>>>> 90263f14703c89d8f4681e8d0760a8acc97046d1
         for x, y, d in self.circles:
             painter.drawEllipse(x, y, d, d)
 
