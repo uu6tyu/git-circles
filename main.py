@@ -6,7 +6,7 @@ from PyQt6 import uic
 from PyQt6.QtGui import QColor, QPainter, QBrush
 from PyQt6.QtWidgets import QApplication, QMainWindow
 
-
+#11
 class Circles(QMainWindow):
     def __init__(self):
         super().__init__()
