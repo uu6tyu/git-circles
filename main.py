@@ -5,14 +5,16 @@ from random import randint
 from PyQt6 import uic
 from PyQt6.QtGui import QColor, QPainter, QBrush
 from PyQt6.QtWidgets import QApplication, QMainWindow
-import Ui_MainWindow
+from ui_form import Ui_MainWindow
+import random
+# 11
 
-#11
-class Circles(QMainWindow):
+
+class Circles(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         # Загружаем интерфейс из файла, лежащего рядом с программой
-        uic.loadUi(Path(__file__).with_name("UI.ui"), self)
+        self.setupUi(self)
         self.circles = []  # список окружностей: (x, y, диаметр)
         self.pushButton.clicked.connect(self.add_circle)
 
@@ -26,11 +28,11 @@ class Circles(QMainWindow):
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-<<<<<<< HEAD
+        red = random.randint(0, 255)
+        green = random.randint(0, 255)
+        blue = random.randint(0, 255)
         painter.setBrush(QColor("yellow"))
-=======
-        painter.setBrush(QBrush(QColor("yellow"))
->>>>>>> 90263f14703c89d8f4681e8d0760a8acc97046d1
+        painter.setBrush(QBrush(QColor(red, green, blue)))
         for x, y, d in self.circles:
             painter.drawEllipse(x, y, d, d)
 

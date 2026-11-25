@@ -1,24 +1,24 @@
-import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
+from PyQt6 import QtCore, QtWidgets
 
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(600, 500)
 
-        self.resize(600, 500)
-        self.setWindowTitle("Окружности")
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
 
-        self.centralwidget = QWidget(self)
-        self.setCentralWidget(self.centralwidget)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(220, 440, 160, 40))
+        self.pushButton.setObjectName("pushButton")
 
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(220, 440, 160, 40)
-        self.pushButton.setText("Нарисовать")
+        MainWindow.setCentralWidget(self.centralwidget)
 
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Окружности"))
+        self.pushButton.setText(_translate("MainWindow", "Нарисовать"))
